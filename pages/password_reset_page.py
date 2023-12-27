@@ -14,5 +14,5 @@ class PasswordResetPage(BasePage):
         self.click_to_element(PasswordResetLocators.RESET_BUTTON)
 
     @allure.step('Кликаем на кнопку Показать/скрыть пароль')
-    def click_show_password_button(self):
+    def click_on_show_password_button(self):
         self.click_to_element(PasswordResetLocators.SHOW_PASSWORD_BUTTON)
