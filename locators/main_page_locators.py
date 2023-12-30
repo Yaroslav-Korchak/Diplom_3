@@ -13,11 +13,11 @@ class MainPageLocators:
     FILLINGS = By.XPATH, '//span[text()="Начинки"]/parent::div'  # Начинки
     BUNS = By.XPATH, '//span[text()="Булки"]/parent::div'  # Булки
 
-    # BUN = By.XPATH, '//*[@href="/ingredient/61c0c5a71d1f82001bdaaa6c"]'  # краторная булка
-    BUN = By.XPATH, '//*[@href="/ingredient/61c0c5a71d1f82001bdaaa6d"]'
+    BUN = By.XPATH, '//*[@href="/ingredient/61c0c5a71d1f82001bdaaa6c"]'  # краторная булка
+    # BUN = By.XPATH, '//*[@href="/ingredient/61c0c5a71d1f82001bdaaa6d"]'
     FILLING_FILE = By.XPATH, '//*[@href="/ingredient/61c0c5a71d1f82001bdaaa6e"]'  #Филе Люминесцентного тетраодонтимформа
     SAUCE = By.XPATH, '//*[@href="/ingredient/61c0c5a71d1f82001bdaaa73"]'  #ингредиент Соус фирменный Space Sauce
-    INGREDIENT_COUNTER = By.XPATH, '//*[@href="/ingredient/61c0c5a71d1f82001bdaaa6d"]//p[contains(@class, "counter__num")]' #счетчик ингредиента
+    INGREDIENT_COUNTER = By.XPATH, '//*[@href="/ingredient/61c0c5a71d1f82001bdaaa6e"]//p[contains(@class, "counter__num")]' #счетчик ингредиента
     INGREDIENT_DETAILS_POPUP = By.XPATH, '//h2[text()="Детали ингредиента"]'  # Детали ингредиента
     INGREDIENT_POPUP = By.XPATH, '//*[contains(@class, "contentBox")]'  # всплывающее окно Детали ингредиента
     ORDER_BASKET = By.XPATH, '//ul[contains(@class,"basket")]'  # Корзина

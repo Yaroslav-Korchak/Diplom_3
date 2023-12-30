@@ -1,6 +1,5 @@
 import pytest
 from selenium import webdriver
-from locators.main_page_locators import MainPageLocators
 from locators.personal_account_locators import PersonalAccountLocators
 from locators.header_page_locators import HeaderPageLocators
 from pages.main_page import MainPage
@@ -9,9 +8,9 @@ import requests
 from data.data import Links
 import random
 import string
-import time
 
-#
+
+
 # @pytest.fixture
 # def driver():
 #     driver = webdriver.Chrome()
@@ -21,23 +20,16 @@ import time
 #     driver.quit()
 
 
-# @pytest.fixture
-# def driver():
-#     firefox_options = webdriver.FirefoxOptions()
-#     driver = webdriver.Firefox(options=firefox_options)
-#     driver.set_window_size(1920, 1080)
-#     driver.get('https://stellarburgers.nomoreparties.site/')
-#     yield driver
-#     driver.quit()
 
-# Фикстура для запуска тестов на двух браузерах
 
 @pytest.fixture(params=['firefox', 'chrome'])
 def driver(request):
     if request.param == 'firefox':
         driver = webdriver.Firefox()
+        driver.set_window_size(1920, 1080)
     elif request.param == 'chrome':
         driver = webdriver.Chrome()
+        driver.set_window_size(1920, 1080)
     driver.get('https://stellarburgers.nomoreparties.site/')
     yield driver
     driver.quit()
@@ -71,7 +63,6 @@ def create_and_delete_user():
 @pytest.fixture
 def login(driver, create_and_delete_user):
     main_page = MainPage(driver)
-    # main_page.open_link(Links.main_page)
     main_page.click_on_enter_account()
     main_page.click_to_element(HeaderPageLocators.PERSONAL_ACCOUNT)
     personal_account_page = PersonalAccountPage(driver)

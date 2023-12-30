@@ -25,9 +25,9 @@ class TestMainPage:
     def test_ingredient_counter(self, driver):
         main_page = MainPage(driver)
         start_quantity = main_page.check_quantity_of_ingredients()
-        main_page.add_bun_to_order()
+        main_page.add_filling_to_order()
         end_quantity = main_page.check_quantity_of_ingredients()
-        assert end_quantity == '2' and start_quantity == '0'
+        assert end_quantity == '1' and start_quantity == '0'
 
     @allure.title('Проверка успешного создания заказа')
     def test_successful_order(self, driver, login):
