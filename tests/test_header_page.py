@@ -1,11 +1,6 @@
 import allure
 from locators.orders_page_locators import OrdersPageLocators
-from locators.main_page_locators import MainPageLocators
-from locators.personal_account_locators import PersonalAccountLocators
-from pages.orders_page import OrdersPage
 from pages.header_page import HeaderPage
-from pages.main_page import MainPage
-from pages.personal_account_page import PersonalAccountPage
 from data.data import *
 
 

@@ -14,7 +14,7 @@ class HeaderPage(BasePage):
     def click_constructor_button(self):
         self.click_on_element(HeaderPageLocators.CONSTRUCTOR)
 
-    @allure.step('Переходим в Личный кабинет')
+    @allure.step('Переход в Личный кабинет')
     def click_on_account(self):
         self.move_to_element_and_click(HeaderPageLocators.PERSONAL_ACCOUNT)
 

@@ -4,7 +4,6 @@ from locators.password_reset_locators import PasswordResetLocators
 from pages.personal_account_page import PersonalAccountPage
 from pages.password_reset_page import PasswordResetPage
 from pages.header_page import HeaderPage
-from locators.header_page_locators import HeaderPageLocators
 
 
 class TestPasswordReset:
@@ -16,17 +15,6 @@ class TestPasswordReset:
         page.click_password_reset_link()
         current_url = page.get_current_url()
         assert current_url == Links.forgot_password_page
-
-#Тот же самый тест, но только работающий для firefox. Ни в одном тесте firefox не работает нормально,
-    # кликает только через скрипты иначе ошибка "element click intrcepted"
-    # @allure.title('Проверка перехода по клику на Восстановить пароль на странице логина')
-    # def test_tttclick_password_reset_button(self, driver):
-    #     page = PersonalAccountPage(driver)
-    #     page.open_link(Links.login_page)
-    #     button = driver.find_element(By.XPATH, '//*[@href="/forgot-password"]')
-    #     driver.execute_script("arguments[0].click();", button)
-    #     current_url = page.get_current_url()
-    #     assert current_url == Links.forgot_password_page
 
     @allure.title('Проверка ввода почты и перехода после клика по кнопке "Восстановить"')
     def test_enter_email_and_click_reset(self, driver, create_and_delete_user):

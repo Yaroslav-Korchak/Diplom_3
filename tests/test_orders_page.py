@@ -6,7 +6,6 @@ from pages.orders_page import OrdersPage
 from pages.main_page import MainPage
 from pages.header_page import HeaderPage
 from pages.personal_account_page import PersonalAccountPage
-import time
 
 
 class TestOrderListPage:

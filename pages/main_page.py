@@ -38,16 +38,6 @@ class MainPage(BasePage):
     def check_quantity_of_ingredients(self):
         return self.get_text_of_element(MainPageLocators.INGREDIENT_COUNTER)
 
-    # @allure.step('Создаем заказ и получаем его номер')
-    # def create_order(self):
-    #     self.find_my_element(MainPageLocators.CRATOR_BUN)
-    #     self.drag_and_drop_element(MainPageLocators.CRATOR_BUN, MainPageLocators.ORDER_BASKET)
-    #     self.drag_and_drop_element(MainPageLocators.INGREDIENT_FILLING, MainPageLocators.ORDER_BASKET)
-    #     self.click_to_element(MainPageLocators.CREATE_ORDER_BUTTON)
-    #     self.find_my_element(MainPageLocators.ORDER_STATUS_TEXT)
-    #     self.find_my_element(MainPageLocators.DEFAULT_ORDER)
-    #     order_number = self.get_text_of_element(MainPageLocators.ORDER_NUMBER)
-    #     return order_number
     @allure.step('Создаем заказ и получаем его номер')
     def create_order(self):
         self.wait_until_element_visibility(MainPageLocators.BUN)

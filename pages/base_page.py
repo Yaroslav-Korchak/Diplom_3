@@ -70,11 +70,6 @@ class BasePage:
         element_to = self.driver.find_element(*locator_to)
         ActionChains(self.driver).drag_and_drop(element_from, element_to).perform()
 
-
-# Дорогой ревьюер! Если ты это читаешь, то знай, firefox отныне не входит в список браузеров,
-    # которые достойны уважения с моей точки зрения)))     Пришлось провести огромную работу и перекопать кучу литературы,
-    #чтобы узнать, как побороть часть тестов и заставить их работать в firefox, но заставить ингредиенты попадать в корзину я так и не смог
-
     @allure.step('Переместиться до элемента и кликнуть')
     def move_to_element_and_click(self, locator):
         element = self.driver.find_element(*locator)

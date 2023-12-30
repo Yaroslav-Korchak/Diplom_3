@@ -6,8 +6,6 @@ from pages.personal_account_page import PersonalAccountPage
 from locators.main_page_locators import MainPageLocators
 from pages.main_page import MainPage
 from pages.header_page import HeaderPage
-import time
-
 
 
 class TestPersonalAccount:
@@ -28,16 +26,6 @@ class TestPersonalAccount:
         current_url = page.get_current_url()
         assert current_url == Links.orders_history
 
-    # @allure.title('Проверка выхода из аккаунта')
-    # def test_user_logout(self, driver, login):
-    #     main_page = PersonalAccountPage(driver)
-    #     main_page.find_my_element(MainPageLocators.BUN)
-    #     page.click_account_button()
-    #     page.click_logout_button()
-    #     page.find_my_element(PersonalAccountLocators.ENTER_BUTTON)
-    #     text = page.get_text_of_element(PersonalAccountLocators.ENTER_BUTTON)
-    #     assert text == 'Войти'
-
     @allure.title('Проверка выхода из аккаунта')
     def test_logout(self, driver, login):
 
@@ -51,4 +39,3 @@ class TestPersonalAccount:
         personal_account_page.wait_until_element_visibility(PersonalAccountLocators.ENTER_BUTTON)
         text = personal_account_page.get_text_of_element(PersonalAccountLocators.ENTER_BUTTON)
         assert text == 'Войти'
-        # assert personal_account_page.find_my_element(PersonalAccountLocators.ENTER_BUTTON).is_displayed()

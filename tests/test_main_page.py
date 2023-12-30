@@ -1,7 +1,6 @@
 import allure
 from locators.main_page_locators import MainPageLocators
 from pages.main_page import MainPage
-import time
 
 
 class TestMainPage:
