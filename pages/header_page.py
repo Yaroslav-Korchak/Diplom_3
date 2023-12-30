@@ -1,7 +1,6 @@
 import allure
 from locators.header_page_locators import HeaderPageLocators
 from locators.orders_page_locators import OrdersPageLocators
-from locators.main_page_locators import MainPageLocators
 from pages.base_page import BasePage
 
 
@@ -14,7 +13,6 @@ class HeaderPage(BasePage):
     @allure.step('Переход в "Конструктор"')
     def click_constructor_button(self):
         self.click_on_element(HeaderPageLocators.CONSTRUCTOR)
-        # self.wait_until_element_visibility(MainPageLocators.CREATE_ORDER_BUTTON)
 
     @allure.step('Переходим в Личный кабинет')
     def click_on_account(self):
