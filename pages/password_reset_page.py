@@ -11,8 +11,8 @@ class PasswordResetPage(BasePage):
 
     @allure.step('Нажимаем на кнопку Восстановить')
     def click_reset_button(self):
-        self.click_to_element(PasswordResetLocators.RESET_BUTTON)
+        self.move_to_element_and_click(PasswordResetLocators.RESET_BUTTON)
 
     @allure.step('Кликаем на кнопку Показать/скрыть пароль')
     def click_on_show_password_button(self):
-        self.click_to_element(PasswordResetLocators.SHOW_PASSWORD_BUTTON)
+        self.click_on_element(PasswordResetLocators.SHOW_PASSWORD_BUTTON)
