@@ -8,7 +8,6 @@ class OrdersPageLocators:
     ORDER_NUMBER = By.XPATH, '//p[text()="{}"]'  # номер заказа в ленте
     ALL_READY = By.XPATH, '//li[text()="Все текущие заказы готовы!"]'  # надпись "Все текущие заказы готовы!"
     IN_WORK = By.XPATH, '//*[contains(@class,"orderListReady")]//li[contains(@class,"digits-default")]'  # номер заказа в работе
-    ALL_ORDERS = By.XPATH, '//p[text()="Выполнено за все время:"]/following-sibling::p[contains(@class,"digits-large")]'# заказы за всё время
     TODAY_ORDERS = By.XPATH, '//p[text()="Выполнено за сегодня:"]/following-sibling::p[contains(@class,"digits-large")]'
 
 
