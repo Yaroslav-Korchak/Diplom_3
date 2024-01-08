@@ -11,16 +11,6 @@ import string
 
 
 
-# @pytest.fixture
-# def driver():
-#     driver = webdriver.Chrome()
-#     driver.set_window_size(1920, 1080)
-#     driver.get('https://stellarburgers.nomoreparties.site/')
-#     yield driver
-#     driver.quit()
-
-
-
 
 @pytest.fixture(params=['firefox', 'chrome'])
 def driver(request):
@@ -54,10 +44,10 @@ def create_and_delete_user():
 
     login_data = payload.copy()
     login_data.pop("name")
-    response = requests.post(Links.register_user, data=payload)
+    response = requests.post(Links.REGISTER_USER, data=payload)
     access_token = response.json()["accessToken"]
     yield login_data, access_token
-    requests.delete(Links.delete_user, headers={'Authorization': access_token})
+    requests.delete(Links.DELETE_USER, headers={'Authorization': access_token})
 
 
 @pytest.fixture

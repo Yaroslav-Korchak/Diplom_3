@@ -10,7 +10,7 @@ class TestHeaderPage:
         header_page = HeaderPage(driver)
         header_page.click_orders_list_button()
         current_url = header_page.get_current_url()
-        assert current_url == Links.feed
+        assert current_url == Links.FEED
 
     @allure.title('Проверка перехода в "Конструктор"')
     def test_go_to_constructor(self, driver):
@@ -19,4 +19,4 @@ class TestHeaderPage:
         header_page.wait_until_element_visibility(OrdersPageLocators.ORDERS_LIST_TITLE)
         header_page.click_constructor_button()
         current_url = header_page.get_current_url()
-        assert current_url == Links.main_page
+        assert current_url == Links.MAIN_PAGE

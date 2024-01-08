@@ -15,7 +15,7 @@ class TestPersonalAccount:
         page.find_my_element(HeaderPageLocators.CONSTRUCTOR)
         page.click_account_button()
         current_url = page.get_current_url()
-        assert current_url == Links.profile_page
+        assert current_url == Links.PROFILE_PAGE
 
     @allure.title('Проверка перехода в раздел История заказов')
     def test_go_to_order_history(self, driver, login):
@@ -24,7 +24,7 @@ class TestPersonalAccount:
         page.click_account_button()
         page.click_order_list_link()
         current_url = page.get_current_url()
-        assert current_url == Links.orders_history
+        assert current_url == Links.ORDERS_HISTORY
 
     @allure.title('Проверка выхода из аккаунта')
     def test_logout(self, driver, login):

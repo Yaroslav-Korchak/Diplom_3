@@ -14,22 +14,22 @@ class TestPasswordReset:
         page = PersonalAccountPage(driver)
         page.click_password_reset_link()
         current_url = page.get_current_url()
-        assert current_url == Links.forgot_password_page
+        assert current_url == Links.FORGOT_PASSWORD_PAGE
 
     @allure.title('Проверка ввода почты и перехода после клика по кнопке "Восстановить"')
     def test_enter_email_and_click_reset(self, driver, create_and_delete_user):
         page = PasswordResetPage(driver)
-        page.open_link(Links.forgot_password_page)
+        page.open_link(Links.FORGOT_PASSWORD_PAGE)
         page.set_email_for_reset_password(create_and_delete_user[0]['email'])
         page.click_reset_button()
         page.find_my_element(PasswordResetLocators.SAVE_BUTTON)
         current_url = page.get_current_url()
-        assert current_url == Links.reset_password_page
+        assert current_url == Links.RESET_PASSWORD_PAGE
 
     @allure.title('Проверка что клик по кнопке показать/скрыть пароль делает поле активным')
     def test_make_field_active(self, driver, create_and_delete_user):
         page = PasswordResetPage(driver)
-        page.open_link(Links.forgot_password_page)
+        page.open_link(Links.FORGOT_PASSWORD_PAGE)
         page.set_email_for_reset_password(create_and_delete_user[0]['email'])
         page.click_reset_button()
         page.find_my_element(PasswordResetLocators.SAVE_BUTTON)
